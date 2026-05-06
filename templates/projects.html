@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+{% block title %}Projects | EcoSphere{% endblock %}
+
+{% block content %}
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='projects.css') }}">
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>PROJECTS</h1>
+      <p>Discover impactful SDG 13 & 15 environmental projects making a difference in the Philippines and beyond.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="projects-container">
+
+      <!-- PROJECT 1 -->
+             <article class="card">
+        <img src="{{ url_for('static', filename='images/reforestation.jpg') }}" alt="One Planet One Earth Foundation">
+        <div class="card-content">
+          <span class="sdg-tag">SDG 13</span>
+          <h3>One Planet One Earth Foundation — One Green Hero</h3>
+          <p class="lead">A nonprofit driving tech-enabled forest restoration and community programs.</p>
+
+          <div class="info">
+            <div><strong>Location:</strong> Philippines</div>
+            <div><strong>Duration:</strong> Ongoing</div>
+
+            <div class="info-block">
+              <strong>Impact:</strong>
+              <ul>
+                <li>$27,047 raised</li>
+                <li>1,890 donors</li>
+                <li>100+ active volunteers</li>
+                <li>Tree planting & reforestation events</li>
+                <li>Livelihood and education programs</li>
+              </ul>
+            </div>
+
+            <div class="info-block">
+              <strong>Goals:</strong>
+              <ul>
+                <li>Restore degraded forests</li>
+                <li>Strengthen sustainable forest management</li>
+                <li>Empower local communities</li>
+                <li>Boost environmental awareness</li>
+                <li>Influence sustainability policies</li>
+              </ul>
+            </div>
+          </div>
+
+          <a class="learn-btn" href="https://www.oneplanetoneearthfoundation.org/index.html" target="_blank">Learn More</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 -->
+      <article class="card">
+        <img src="{{ url_for('static', filename='images/rootingcare.jpg') }}" alt="Rooted in Care (Sanicare & Haribon)">
+        <div class="card-content">
+          <span class="sdg-tag">SDG 13</span>
+          <h3>Rooted in Care (Sanicare & Haribon)</h3>
+          <p class="lead">Sanicare restores ancestral forests in Tanay, Rizal with Haribon Foundation.</p>
+
+          <div class="info">
+            <div><strong>Location:</strong> Tanay, Rizal & nearby forest sites</div>
+            <div><strong>Duration:</strong> 2014 – Present</div>
+
+            <div class="info-block">
+              <strong>Impact:</strong>
+              <ul>
+                <li>1,250 native seedlings planted in 2025</li>
+                <li>15,000+ seedlings planted since 2014</li>
+                <li>12 hectares reforested</li>
+                <li>93% seedling survival rate</li>
+                <li>Support for indigenous communities</li>
+              </ul>
+            </div>
+
+            <div class="info-block">
+              <strong>Goals:</strong>
+              <ul>
+                <li>Restore ancestral ecosystems</li>
+                <li>Preserve local culture and forest heritage</li>
+                <li>Plant indigenous species (Narra, Pili, Igan)</li>
+                <li>Strengthen soil health and forest resilience</li>
+                <li>Promote long-term rehabilitation</li>
+              </ul>
+            </div>
+          </div>
+
+          <a class="learn-btn" href="https://scpa.com.ph/sanicare-plants-1250-seedlings-with-haribon" target="_blank">Learn More</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 3 -->
+      <article class="card">
+        <img src="{{ url_for('static', filename='images/engp.jpg') }}" alt="Enhanced National Greening Program">
+        <div class="card-content">
+          <span class="sdg-tag">SDG 15</span>
+          <h3>Enhanced National Greening Program (E-NGP)</h3>
+          <p class="lead">A nationwide DENR program for reforestation and environmental restoration.</p>
+
+          <div class="info">
+            <div><strong>Location:</strong> Nationwide, Philippines</div>
+            <div><strong>Duration:</strong> 2011 – Present</div>
+
+            <div class="info-block">
+              <strong>Impact:</strong>
+              <ul>
+                <li>Target: 1.5 billion trees planted</li>
+                <li>Rehabilitation of 1.5 million hectares</li>
+                <li>Improved forest cover and water sources</li>
+                <li>Support for upland community livelihoods</li>
+                <li>Increased carbon storage</li>
+              </ul>
+            </div>
+
+            <div class="info-block">
+              <strong>Goals:</strong>
+              <ul>
+                <li>Restore denuded forests</li>
+                <li>Reduce poverty in upland areas</li>
+                <li>Promote sustainable resource management</li>
+                <li>Strengthen forest protection and monitoring</li>
+                <li>Harmonize greening efforts nationwide</li>
+              </ul>
+            </div>
+          </div>
+
+          <a class="learn-btn" href="https://r7.denr.gov.ph/priority-program/enhanced-national-greening-program/" target="_blank">Learn More</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 4 -->
+            <article class="card">
+        <img src="{{ url_for('static', filename='images/haribonproject.png') }}" alt="Haribon Forests for Life">
+        <div class="card-content">
+          <span class="sdg-tag">SDG 15</span>
+          <h3>Haribon Forests for Life (FFL)</h3>
+          <p class="lead">A Haribon Foundation initiative restoring Philippine rainforests since 2006.</p>
+
+          <div class="info">
+            <div><strong>Location:</strong> Philippines (multiple sites)</div>
+            <div><strong>Duration:</strong> 2006 – Present</div>
+
+            <div class="info-block">
+              <strong>Impact:</strong>
+              <ul>
+                <li>1,000,000+ trees planted</li>
+                <li>Thousands of hectares restored</li>
+                <li>15,000+ volunteers engaged</li>
+                <li>150+ corporate sponsors</li>
+                <li>16 partner communities</li>
+              </ul>
+            </div>
+
+            <div class="info-block">
+              <strong>Goals:</strong>
+              <ul>
+                <li>Restore 1 million hectares of forest</li>
+                <li>Expand biodiversity protection</li>
+                <li>Protect species like hornbills and Philippine eagle</li>
+                <li>Support sustainable community livelihoods</li>
+                <li>Increase carbon sequestration</li>
+              </ul>
+            </div>
+          </div>
+
+          <a class="learn-btn" href="https://trilliontrees.org/project/haribon-forests-for-life/" target="_blank">Learn More</a>
+        </div>
+      </article>
+      <!-- PROJECT 5 -->
+      <article class="card">
+        <img src="{{ url_for('static', filename='images/trees.jpg') }}" alt="Mama Earth Foundation">
+        <div class="card-content">
+          <span class="sdg-tag">SDG 15</span>
+          <h3>Mama Earth Foundation — myTree Program</h3>
+          <p class="lead">Mindanao-based foundation planting mangroves and endemic trees with GPS tracking.</p>
+
+          <div class="info">
+            <div><strong>Location:</strong> Mindanao & other sites</div>
+            <div><strong>Duration:</strong> 25+ years</div>
+
+            <div class="info-block">
+              <strong>Impact:</strong>
+              <ul>
+                <li>5,407,321 mangroves planted</li>
+                <li>180,000 endemic trees grown</li>
+                <li>Long-running tree restoration projects</li>
+                <li>School recycling-for-trees programs</li>
+              </ul>
+            </div>
+
+            <div class="info-block">
+              <strong>Goals:</strong>
+              <ul>
+                <li>Restore mangrove ecosystems</li>
+                <li>Protect native forests</li>
+                <li>Build sustainable livelihoods</li>
+                <li>Engage and educate communities</li>
+                <li>Use GPS for transparent tracking</li>
+              </ul>
+            </div>
+          </div>
+
+          <a class="learn-btn" href="https://mama-earth.eco/" target="_blank">Learn More</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 6 -->
+      <article class="card">
+        <img src="{{ url_for('static', filename='images/tfca1.jpg') }}" alt="Tropical Forest Conservation Act">
+        <div class="card-content">
+          <span class="sdg-tag">SDG 15</span>
+          <h3>Tropical Forest Conservation Act (TFCA) 1 & 2</h3>
+          <p class="lead">US-supported initiatives funding forest protection and community conservation.</p>
+
+          <div class="info">
+            <div><strong>Location:</strong> Nationwide</div>
+            <div><strong>Duration:</strong> TFCA1: 2002–2016 • TFCA2: 2017–2027</div>
+
+            <div class="info-block">
+              <strong>Impact:</strong>
+              <ul>
+                <li>TFCA1: US$8.25M allocated</li>
+                <li>TFCA2: US$32M+ allocated</li>
+                <li>Supported research & biodiversity studies</li>
+                <li>Reforestation in key landscapes</li>
+                <li>Enhanced community participation</li>
+              </ul>
+            </div>
+
+            <div class="info-block">
+              <strong>Goals:</strong>
+              <ul>
+                <li>Protect tropical forests</li>
+                <li>Fund biodiversity research</li>
+                <li>Support civil society involvement</li>
+                <li>Expand community-driven conservation</li>
+                <li>Strengthen environmental policy</li>
+              </ul>
+            </div>
+          </div>
+
+          <a class="learn-btn" href="https://www.forestfoundation.ph/tfca-project-2/" target="_blank">Learn More</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+{% endblock %}

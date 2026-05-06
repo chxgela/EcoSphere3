@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block title %}Home | EcoSphere{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link
+  href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet">
+<div class="video-background">
+  <video autoplay muted loop playsinline id="BGVid">
+    <source src="{{ url_for('static', filename='videos/final bg.mp4') }}" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+</div>
+
+<main class="ecosphere">
+  <h1 class="bubble">Welcome to <span>EcoSphere!</span></h1>
+  <h2>Take action for Climate Change and Life on Land</h2>
+  <p>Join thousands of people making a difference through sustainable projects and climate initiatives.</p>
+</main>
+
+<section class="datasdg-section" id="datasdg">
+  <h2>UN Sustainable Development Goals</h2>
+  <p>EcoSphere focuses on SDG 13 (Climate Action) and SDG 15 (Life on Land).</p>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="face face1">
+        <div class="content">
+          <div class="icon">
+            <img src="{{ url_for('static', filename='images/climatechange.png') }}">
+          </div>
+        </div>
+      </div>
+      <div class="face face2">
+        <div class="content">
+          <h3>Climate Action</h3>
+          <p>Promoting sustainable climate initiatives.</p>
+          <a href="{{ url_for('sdg') }}" class="learn-btn" target="_blank">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="face face1">
+        <div class="content">
+          <div class="icon">
+            <img src="{{ url_for('static', filename='images/lifeonland.png') }}">
+          </div>
+        </div>
+      </div>
+      <div class="face face2">
+        <div class="content">
+          <h3>Life on Land</h3>
+          <p>Preserving forests and biodiversity.</p>
+          <a href="{{ url_for('sdg') }}" class="learn-btn" target="_blank">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--- WHAT ARE SDG'S? SECTION -->
+
+<section class="mainsdg" id="whataresdg">
+  <div class="sdg-left">
+    <iframe src="https://www.youtube.com/embed/0XTBYMfZyrM?autoplay=1&mute=1&loop=1&playlist=0XTBYMfZyrM"
+      frameborder="0" allow="autoplay; loop; muted; fullscreen" allowfullscreen></iframe>
+  </div>
+
+  <div class="sdg-right">
+    <h1>WHAT ARE SDG'S?</h1>
+    <p>
+      The <strong>Sustainable Development Goals</strong> (SDGs) are a global blueprint for a better and more
+      sustainable future.
+      They address the most pressing challenges facing our world, including poverty, inequality, climate change,
+      environmental degradation, peace, and justice.
+    </p>
+    <img src="{{ url_for('static', filename='images/sdglogo.png') }}" alt="SDG Logo"
+      class="sdg-right img">
+    <p>
+      <em>
+        Explore how the 17 Sustainable Development Goals aim to create a better, greener, and more equal world for
+        everyone.
+        Together, we can take action to protect our planet and build a future where no one is left behind.
+      </em>
+    </p>
+    <a href="https://sdgs.un.org/goals" target="_blank" class="sdg-btn">Learn More about SDG's</a>
+  </div>
+</section>
+
+<!-- EXPLORE OUR PROJECTS -->
+
+<section class="gallery-section" id="gallery">
+    <h2 data-aos="fade-up">Explore Our Eco Projects</h2>
+    <ul class="gallery">
+
+      <!-- Project Uno -->
+      <li>
+        <img src="{{ url_for('static', filename='images/haribonproject.png') }}" alt="Haribon Forest For Life Philippines">
+        <div class="content">
+          <h3>Haribon Forest For Life Philippines</h3>
+          <p>Bringing together local communities in the Philippines to restore lost forests and mangroves.</p>
+          <p><strong>15,000 Volunteers</strong></p>
+          <p><strong>Impact:</strong> 1 Million Trees Planted</p>
+          <span class="status completed">Completed Project</span>
+          <a href="{{ url_for('projects') }}" target="_blank" class="learn-btn">Learn
+            More</a>
+        </div>
+      </li>
+      <!-- Project Dos -->
+      <li>
+        <img src="{{ url_for('static', filename='images/rootingcare.jpg') }}" alt="Rooted in Care">
+        <div class="content">
+          <h3>Rooted in Care</h3>
+          <p>Sanicare continues its commitment to sustainability and environmental stewardship through its
+            annual tree planting activity with the Haribon Foundation.</p>
+          <p><strong>Impact:</strong> 1,250 native seedlings planted</p>
+          <span class="status completed">Completed Project</span>
+          <a href="{{ url_for('projects') }}" target="_blank"
+            class="learn-btn">Learn More</a>
+        </div>
+      </li>
+      <!-- Project Tres -->
+      <li>
+        <img src="{{ url_for('static', filename='images/engp.jpg') }}" alt="ENGP">
+        <div class="content">
+          <h3>Enhanced National Greening Program (ENGP)</h3>
+          <p>Led by the DENR Forest Management Bureau, this program targets the reforestation of 7.1 million
+            hectares of forestlands in the Philippines.</p>
+          <p><strong>Impact:</strong> 1.8 billion seedlings across 2.17 million hectares</p>
+          <span class="status ongoing">Ongoing Program</span>
+          <a href="{{ url_for('projects') }}" target="_blank"
+            class="learn-btn">Learn More</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+{% endblock %}

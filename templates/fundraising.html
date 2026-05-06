@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% block title %}Fundraising | EcoSphere{% endblock %}
+
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <title>EcoSphere Fundraising</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='fundraising.css') }}">
+</head>
+<body>
+
+  <!-- VIDEO BACKGROUND -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="{{ url_for('static', filename='videos/final bg.mp4') }}" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <main class="hero">
+    <h1>Support <span>EcoSphere</span>!</h1>
+    <h2>Make a difference with your donation</h2>
+    <p>Your contributions help fund sustainable projects and climate initiatives.</p>
+
+    <!-- DONATION FORM -->
+    <form id="donationForm">
+      <label>First Name:</label>
+      <input type="text" name="first_name" required>
+
+      <label>Last Name:</label>
+      <input type="text" name="last_name" required>
+
+      <label>Contact Number:</label>
+      <input type="tel" name="contact" pattern="[0-9]{11}" required>
+
+      <label>Email:</label>
+      <input type="email" name="email" required>
+
+      <label>Donation Amount (₱):</label>
+      <input type="number" name="amount" step="0.01" required>
+
+      <label>Mode of Payment:</label>
+      <select name="payment_mode" id="payment_mode" required>
+        <option value="">Select Payment Method</option>
+        <option value="GCash">GCash</option>
+        <option value="Maya">Maya</option>
+        <option value="BancNet">BancNet</option>
+      </select>
+
+      <div id="payment_preview" class="payment-preview"></div>
+
+      <label>Transaction Number:</label>
+      <input type="text" name="transaction_number" id="transaction_number" required>
+
+      <button type="button" id="submitBtn">Donate</button>
+    </form>
+
+        <!-- CONFIRMATION MODAL -->
+    <div id="confirmationModal" class="modal">
+      <div class="modal-content">
+        <h2 class="modal-header">Confirm Donation</h2>
+        <p>Donation Amount: ₱<span id="modalAmount"></span></p>
+        <p>Mode of Payment: <span id="modalPayment"></span></p>
+        <p>Transaction Number: <span id="modalTransactionDisplay"></span></p>
+        <button id="confirmDonation">Yes, Donate</button>
+        <button id="cancelDonation">Cancel</button>
+      </div>
+    </div>
+
+    <!-- DONATION SUMMARY -->
+    <div class="summary-card">
+      <h3>Donation Summary</h3>
+      <p><strong>Total Donations:</strong> ₱<span id="totalAmount">{{ total_amount }}</span></p>
+      <p><strong>Total Donors:</strong> <span id="totalCount">{{ total_count }}</span></p>
+
+      <div class="progress-bar">
+        <div class="progress" style="--progress: {{ progress }}%;"></div>
+      </div>
+
+      <p>Goal: ₱{{ goal }}</p>
+    </div>
+
+    <!-- RECENT DONORS -->
+    <div class="donor-list">
+      <h2>Recent Donors</h2>
+      {% for transaction in recent_donors %}
+        <div class="donor-item">
+          <span>{{ transaction.user.firstname }} {{ transaction.user.lastname }}</span>
+          <span>₱{{ transaction.amount }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <script>
+      const paymentSelect = document.getElementById('payment_mode');
+      const paymentPreview = document.getElementById('payment_preview');
+      const qrImages = {
+        'GCash': "{{ url_for('static', filename='images/gcash.jpg') }}",
+        'Maya': "{{ url_for('static', filename='images/maya.jpg') }}"
+      };
+
+      paymentSelect.addEventListener('change', function() {
+        const mode = this.value;
+        let html = '';
+        if(mode==='GCash'){
+          html = `<p>Send via GCash: 📱 0955 095 7912</p><img src="${qrImages.GCash}">`;
+        } else if(mode==='Maya'){
+          html = `<p>Send via Maya: 📱 0998 422 3210</p><img src="${qrImages.Maya}">`;
+        } else if(mode==='BancNet'){
+          html = `<p>Pay using BancNet Card: 60977 70018 67515 8505</p>`;
+        }
+        paymentPreview.innerHTML = html;
+      });
+
+      const modal = document.getElementById('confirmationModal');
+      const submitBtn = document.getElementById('submitBtn');
+      const confirmDonation = document.getElementById('confirmDonation');
+      const cancelDonation = document.getElementById('cancelDonation');
+      const modalTransactionDisplay = document.getElementById('modalTransactionDisplay');
+
+      submitBtn.addEventListener('click', ()=>{
+        const amount = document.querySelector('input[name="amount"]').value;
+        const payment = document.querySelector('select[name="payment_mode"]').value;
+        const transaction = document.querySelector('input[name="transaction_number"]').value.trim();
+
+        if(!amount || !payment) return alert("Please enter amount and payment mode");
+        if(!transaction) return alert("Please enter your transaction number");
+
+        document.getElementById('modalAmount').innerText = amount;
+        document.getElementById('modalPayment').innerText = payment;
+        modalTransactionDisplay.innerText = transaction;
+        modal.style.display = 'flex';
+      });
+
+      cancelDonation.addEventListener('click', ()=>{
+        modal.style.display = 'none';
+      });
+
+      confirmDonation.addEventListener('click', () => {
+          const formData = new FormData(document.getElementById('donationForm'));
+          
+          fetch("/donation", {
+              method: "POST",
+              body: formData
+          })
+          .then(res => res.json())
+          .then(data => {
+              if(data.success){
+                  alert("Thank you! 🎉\nYour donation has been received. Check your email for confirmation.");
+                  window.location.href = `/donation/pending/${data.donation_id}`;
+              } else {
+                  alert("Error: " + data.error);
+              }
+          })
+          .catch(err => {
+              console.error("Donation failed:", err);
+              alert("Something went wrong. Please try again.");
+          });
+      });
+
+
+      const progress = document.querySelector('.progress');
+      progress.style.width = '0';
+      setTimeout(()=>{ progress.style.width = '{{ progress }}%'; }, 200);
+    </script>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+  </main>
+</body>
+{% endblock %}

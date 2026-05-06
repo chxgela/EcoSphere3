@@ -1,0 +1,329 @@
+/* ===== Global Reset and Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  color: #1a1a1a;
+  background: linear-gradient(to bottom, #e8ffe8, #a8e063);
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* ===== VIDEO BACKGROUND ===== */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(50, 100, 50, 0.4),
+    rgba(30, 70, 120, 0.4),
+    rgba(180, 100, 50, 0.4)
+  );
+  background-size: 300% 300%;
+  animation: colorShift 15s ease-in-out infinite alternate;
+  pointer-events: none;
+  backdrop-filter: brightness(0.8);
+}
+
+@keyframes colorShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  padding-top: 0;
+  color: black;
+  margin-top: 130px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #33580e, #a8e063, #2b6e0c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.hero h1 span { font-weight: 600; }
+
+.hero h2 {
+  font-size: 3.5rem;
+  color: #e8ffe8;
+  margin-top: 15px;
+}
+
+.hero p {
+  margin: 10px auto;
+  font-size: 1.5rem;
+  color: #f5f5f5;
+  opacity: 0.9;
+}
+
+h1 {
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 400px;
+  color: rgb(9, 65, 23);
+  text-align: center;
+  margin: 20px auto;
+  width: fit-content;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== DONATION FORM ===== */
+form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 480px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #2b4709;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+form input:focus, form select:focus { border-color: #6d9c3d; }
+
+form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #6d9c3d;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover { background-color: #58812f; }
+
+form input[name="transaction_number"] {
+  margin-bottom: 20px;
+}
+
+/* ===== PAYMENT PREVIEW ===== */
+#payment_preview {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin-top: 15px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+#payment_preview p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #2b4709;
+}
+
+#payment_preview img {
+  max-width: 200px;
+  margin: 10px auto;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== DONATION SUMMARY ===== */
+.summary-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-top: 40px;
+  max-width: 450px;
+  width: 100%;
+  color: #1f3c1f;
+}
+
+.summary-card h3 {
+  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+  color: #2b6e0c;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.summary-card p, .summary-card span { color: black; }
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar {
+  background: rgba(200, 200, 200, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #64a01b, #a8e063);
+  width: 0;
+  transition: width 1.2s ease-in-out;
+}
+
+/* ===== RECENT DONORS ===== */
+.donor-list {
+  background: rgba(255,255,255,0.85);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-top: 40px;
+  max-width: 450px;
+  width: 100%;
+  color: #1f3c1f;
+}
+
+.donor-list h2 {
+  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+  color: #2b6e0c;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.donor-item {
+  background: rgba(255,255,255,0.9);
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-header {
+  color: #000000;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.modal-content {
+  background: #576b58;
+  padding:30px 25px;
+  border-radius:15px;
+  text-align:center;
+  max-width:400px;
+  width:90%;
+}
+
+.modal-content button {
+  padding:10px 20px;
+  margin:10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* ===== CONFIRM & CANCEL DONATION ===== */
+#confirmDonation {
+  background: #6d9c3d;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#confirmDonation:hover {
+  background: #8fc73f;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+#cancelDonation {
+  background:#ccc;
+  color:#000;
+}
+
+body {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: subtleFade 0.30s ease-out forwards;
+}
+
+@keyframes subtleFade {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
