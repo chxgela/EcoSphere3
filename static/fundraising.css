@@ -17,42 +17,35 @@ body {
 /* ===== VIDEO BACKGROUND ===== */
 .video-background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  inset: 0;
   z-index: -1;
+  overflow: hidden;
 }
-
+ 
 .video-background video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(60%);
+  filter: brightness(55%) saturate(1.1);
 }
-
+ 
 .video-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(
-    45deg,
-    rgba(50, 100, 50, 0.4),
-    rgba(30, 70, 120, 0.4),
-    rgba(180, 100, 50, 0.4)
+    135deg,
+    rgba(20, 60, 20, 0.55) 0%,
+    rgba(10, 40, 80, 0.35) 50%,
+    rgba(100, 60, 10, 0.35) 100%
   );
   background-size: 300% 300%;
-  animation: colorShift 15s ease-in-out infinite alternate;
+  animation: colorShift 18s ease-in-out infinite alternate;
   pointer-events: none;
-  backdrop-filter: brightness(0.8);
 }
-
+ 
 @keyframes colorShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 

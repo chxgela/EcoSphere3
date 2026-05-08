@@ -95,49 +95,65 @@
 <!-- EXPLORE OUR PROJECTS -->
 
 <section class="gallery-section" id="gallery">
-    <h2 data-aos="fade-up">Explore Our Eco Projects</h2>
-    <ul class="gallery">
+  <h2 data-aos="fade-up">Explore Our Eco Projects</h2>
+  <ul class="gallery">
 
-      <!-- Project Uno -->
-      <li>
-        <img src="{{ url_for('static', filename='images/haribonproject.png') }}" alt="Haribon Forest For Life Philippines">
-        <div class="content">
-          <h3>Haribon Forest For Life Philippines</h3>
-          <p>Bringing together local communities in the Philippines to restore lost forests and mangroves.</p>
-          <p><strong>15,000 Volunteers</strong></p>
-          <p><strong>Impact:</strong> 1 Million Trees Planted</p>
-          <span class="status completed">Completed Project</span>
-          <a href="{{ url_for('projects') }}" target="_blank" class="learn-btn">Learn
-            More</a>
-        </div>
-      </li>
-      <!-- Project Dos -->
-      <li>
-        <img src="{{ url_for('static', filename='images/rootingcare.jpg') }}" alt="Rooted in Care">
-        <div class="content">
-          <h3>Rooted in Care</h3>
-          <p>Sanicare continues its commitment to sustainability and environmental stewardship through its
-            annual tree planting activity with the Haribon Foundation.</p>
-          <p><strong>Impact:</strong> 1,250 native seedlings planted</p>
-          <span class="status completed">Completed Project</span>
-          <a href="{{ url_for('projects') }}" target="_blank"
-            class="learn-btn">Learn More</a>
-        </div>
-      </li>
-      <!-- Project Tres -->
-      <li>
-        <img src="{{ url_for('static', filename='images/engp.jpg') }}" alt="ENGP">
-        <div class="content">
-          <h3>Enhanced National Greening Program (ENGP)</h3>
-          <p>Led by the DENR Forest Management Bureau, this program targets the reforestation of 7.1 million
-            hectares of forestlands in the Philippines.</p>
-          <p><strong>Impact:</strong> 1.8 billion seedlings across 2.17 million hectares</p>
-          <span class="status ongoing">Ongoing Program</span>
-          <a href="{{ url_for('projects') }}" target="_blank"
-            class="learn-btn">Learn More</a>
-        </div>
-      </li>
-    </ul>
+        <!-- Project 1 -->
+        <li>
+          <img src="{{ url_for('static', filename='images/coastal_cleanup_batangas.jpg') }}" alt="DENR-CENRO Lipa Coastal Clean-up Drive">
+
+          <div class="content">
+            <h3>DENR-CENRO Lipa — Coastal & River Clean-up Drive</h3>
+            <p>A large-scale environmental initiative focused on cleaning rivers and coastal areas while restoring ecosystems through volunteer action.</p>
+
+            <p><strong>900+ Volunteers</strong></p>
+            <p><strong>Impact:</strong> Thousands of kilograms of waste collected and ecosystem restoration efforts</p>
+
+            <span class="status ongoing">Ongoing Program</span>
+
+            <a href="{{ url_for('projects') }}" target="_blank"
+              class="learn-btn">Learn More</a>
+          </div>
+        </li>
+
+        <!-- Project 2 -->
+        <li>
+          <img src="{{ url_for('static', filename='images/zero_waste_batangas.jpg') }}" alt="Zero Waste Batangas City">
+
+          <div class="content">
+            <h3>Mother Earth Foundation — Zero Waste Batangas City</h3>
+            <p>A community-based solid waste management program promoting recycling, segregation, and landfill waste reduction.</p>
+
+            <p><strong>Coverage:</strong> Multiple barangays in Batangas City</p>
+            <p><strong>Impact:</strong> Improved waste segregation and reduced environmental pollution</p>
+
+            <span class="status ongoing">Ongoing Program</span>
+
+            <a href="{{ url_for('projects') }}" target="_blank"
+              class="learn-btn">Learn More</a>
+          </div>
+        </li>
+
+        <!-- Project 3 -->
+        <li>
+          <img src="{{ url_for('static', filename='images/firstgen_solar.jpg') }}" alt="First Gen Solar Project">
+
+          <div class="content">
+            <h3>First Gen Corporation — Solar Energy Project</h3>
+            <p>A renewable energy project combining solar power generation with sustainable land use in Batangas.</p>
+
+            <p><strong>Impact:</strong> Clean energy production and reduced fossil fuel dependence</p>
+            <p><strong>Location:</strong> Tanauan City, Batangas</p>
+
+            <span class="status ongoing">Ongoing Program</span>
+
+            <a href="{{ url_for('projects') }}" target="_blank"
+              class="learn-btn">Learn More</a>
+          </div>
+        </li>
+
+      </ul>
+    </section>
   </section>
 
 {% endblock %}

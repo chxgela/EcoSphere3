@@ -69,7 +69,6 @@ class Transaction(fund_db.Model):
     mode_of_payment = fund_db.Column(fund_db.String(20), nullable=False)
     transaction_number = fund_db.Column(fund_db.String(50), unique=True, nullable=False)
     reference_number = fund_db.Column(fund_db.String(50), unique=True, nullable=False)
-    # NEW: approval status — "pending" | "approved" | "rejected"
     approval_status = fund_db.Column(fund_db.String(20), nullable=False, default="pending")
     created_at = fund_db.Column(fund_db.DateTime, default=datetime.utcnow)
     reviewed_at = fund_db.Column(fund_db.DateTime, nullable=True)
