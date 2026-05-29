@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+
+{% block title %}About Us | EcoSphere{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='aboutus.css') }}">
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>EcoSphere Overview</h1>
+
+        <p>
+            EcoSphere is an interactive digital platform designed to raise environmental awareness 
+            and inspire collective action for a sustainable future. It empowers individuals to 
+            understand, engage with, and contribute to climate and ecosystem preservation through 
+            accessible content and community initiatives.
+        </p>
+    </div>
+
+</section>
+
+<!-- VISION & MISSION -->
+<section class="vm-section">
+
+    <div class="vm-container">
+
+        <div class="vm-card">
+            <h2>Vision</h2>
+
+            <p>
+                A digitally empowered world where individuals and communities unite to protect 
+                the planet—creating a sustainable and resilient future where climate stability 
+                and biodiversity thrive for generations.
+            </p>
+        </div>
+
+        <div class="vm-card">
+            <h2>Mission</h2>
+
+            <p>
+                EcoSphere aims to inspire, educate, and mobilize individuals toward meaningful 
+                environmental action through a modern, interactive web platform focused on 
+                awareness, advocacy, and sustainability.
+            </p>
+
+            <p>
+                The platform connects users with reliable environmental information, 
+                community initiatives, and opportunities to contribute to climate and 
+                conservation efforts.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PURPOSE SECTION -->
+<section class="purpose-section">
+
+    <div class="purpose-container">
+
+        <div class="purpose-text">
+
+            <h1>Our Purpose</h1>
+
+            <p>
+                In a world increasingly driven by technology, EcoSphere seeks to harness the 
+                power of the internet for environmental good. Climate change, deforestation, 
+                and biodiversity loss continue to threaten ecosystems and human livelihoods.
+            </p>
+
+            <p>
+                EcoSphere was created to bridge the gap between knowledge and action—
+                providing a space where learning leads to engagement, and engagement leads 
+                to real-world environmental change.
+            </p>
+
+        </div>
+
+        <div class="purpose-image">
+            <img src="https://pbs.twimg.com/media/GCWbGk-W0AAYg_B.jpg" alt="EcoSphere Mission">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GOALS -->
+<section class="goals-section">
+
+    <h1>EcoSphere Goals</h1>
+
+    <div class="goals-grid">
+
+        <div class="goal-card">
+            <h3>Advance Climate Awareness</h3>
+
+            <p>
+                Educate users about climate change through engaging content 
+                and sustainable lifestyle practices.
+            </p>
+        </div>
+
+        <div class="goal-card">
+            <h3>Promote Biodiversity Preservation</h3>
+
+            <p>
+                Support conservation initiatives and encourage protection 
+                of forests, wildlife, and ecosystems.
+            </p>
+        </div>
+
+        <div class="goal-card">
+            <h3>Encourage Environmental Action</h3>
+
+            <p>
+                Inspire individuals to participate in environmental campaigns 
+                and sustainability programs.
+            </p>
+        </div>
+
+        <div class="goal-card">
+            <h3>Build a Global Eco-Community</h3>
+
+            <p>
+                Connect advocates, volunteers, and organizations to create 
+                collaborative environmental solutions.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ORGANIZATIONS -->
+<section class="organizations" id="Organizations">
+
+    <h1>OUR SUPPORTING ORGANIZATIONS</h1>
+
+    <p class="org-description">
+        EcoSphere is proudly supported by organizations that share our commitment 
+        to environmental sustainability and climate action.
+    </p>
+
+    <div class="org-grid">
+
+        <a href="https://www.un.org/en/" target="_blank" class="org-card">
+            <img src="{{ url_for('static', filename='images/un.png') }}" alt="UN">
+            <p>United Nations</p>
+        </a>
+
+        <a href="https://lipa.gov.ph/" target="_blank" class="org-card">
+            <img src="{{ url_for('static', filename='images/lipa.png') }}" alt="Lipa">
+            <p>City Government of Lipa</p>
+        </a>
+
+        <a href="https://www.batangascity.gov.ph/web/" target="_blank" class="org-card">
+            <img src="{{ url_for('static', filename='images/batangas_city.png') }}" alt="Batangas City">
+            <p>Batangas City</p>
+        </a>
+
+        <a href="https://portal.batangas.gov.ph/" target="_blank" class="org-card">
+            <img src="{{ url_for('static', filename='images/batangas_province.png') }}" alt="Batangas Province">
+            <p>Province of Batangas</p>
+        </a>
+
+        <a href="https://sustainableworldports.org/" target="_blank" class="org-card">
+            <img src="{{ url_for('static', filename='images/wpsp.png') }}" alt="WPSP">
+            <p>World Ports Sustainability Program</p>
+        </a>
+
+        <a href="http://www.motherearthphil.org/" target="_blank" class="org-card">
+            <img src="{{ url_for('static', filename='images/mef.png') }}" alt="MEF">
+            <p>Mother Earth Foundation</p>
+        </a>
+
+        <a href="https://calabarzon.denr.gov.ph/" target="_blank" class="org-card">
+            <img src="{{ url_for('static', filename='images/denrr4.png') }}" alt="DENR">
+            <p>DENR Region IV-A</p>
+        </a>
+
+        <a href="https://batstateu.edu.ph/" target="_blank" class="org-card">
+            <img src="{{ url_for('static', filename='images/bsu.png') }}" alt="BSU">
+            <p>Batangas State University</p>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="Contacts">
+
+    <h1>Contact Us</h1>
+
+    <p class="contact-description">
+        Have questions or want to collaborate with EcoSphere? 
+        Send us a message and we’ll get back to you as soon as possible.
+    </p>
+
+    <div class="contact-container">
+
+        <!-- CONTACT FORM -->
+        <form action="/send_message" method="POST" class="contact-form">
+
+            <h2>Get In Touch</h2>
+
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="form-row">
+                <input type="text" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+            </div>
+
+            <textarea name="message" placeholder="Message" required></textarea>
+
+            <button type="submit" class="send-btn">
+                Send Message
+            </button>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div id="flash-message">
+
+                        {% for category, message in messages %}
+                            <div class="flash {{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+        </form>
+
+        <!-- CONTACT INFO -->
+        <div class="info-cards">
+
+            <div class="info-card">
+                <div class="icon">📍</div>
+
+                <h3>Our Location</h3>
+
+                <p>
+                    A Tanco Dr, Maraouy, Lipa City, Batangas
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon">📞</div>
+
+                <h3>Phone Number</h3>
+
+                <p>
+                    +63 9955 095 7912
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon">✉️</div>
+
+                <h3>Email Address</h3>
+
+                <p>
+                    ecosphereofficial.ph@gmail.com
+                </p>
+            </div>
+
+        </div>
+
+        <!-- MAP -->
+        <div class="map-container">
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1936.0236472676297!2d121.16180316659393!3d13.955789681623896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6c853f2c90c3%3A0x708efdebcda48ae9!2sBatangas%20State%20University-Lipa%20Campus!5e0!3m2!1sen!2sph!4v1764647544983!5m2!1sen!2sph"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

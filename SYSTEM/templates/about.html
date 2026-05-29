@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}About EcoSphere | EcoSphere{% endblock %}
+{% block content %}
+
+<head>
+    <title>About EcoSphere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>EcoSphere Overview</h1>
+        <p>
+            EcoSphere is an interactive digital platform designed to raise environmental awareness and inspire 
+            collective action for a sustainable future. It empowers individuals to understand, engage with, and
+            contribute to climate and ecosystem preservation through accessible content and community initiatives.
+        </p>
+    </section>
+
+    <!-- VISION + MISSION -->
+    <section class="section vm-section">
+        <div class="vm-container">
+            <div class="vm-card">
+                <h1>Vision</h1>
+                <p>
+                    A digitally empowered world where individuals and communities unite to protect the planet—creating a
+                    sustainable and resilient future where climate stability and biodiversity thrive for generations.
+                </p>
+            </div>
+
+            <div class="vm-card">
+                <h1>Mission</h1>
+                <p>
+                    EcoSphere aims to inspire, educate, and mobilize individuals toward meaningful environmental action through
+                    a modern, interactive web platform focused on awareness, advocacy, and sustainability.
+                </p>
+                <p>
+                    The platform connects users with reliable environmental information, community initiatives, and opportunities
+                    to contribute to meaningful climate and conservation efforts.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PURPOSE SECTION -->
+    <section class="section mission">
+        <h1>Our Purpose</h1>
+        <div class="mission-content">
+            <div class="mission-text">
+                <p>
+                    In a world increasingly driven by technology, EcoSphere seeks to harness the power of the internet for
+                    environmental good. Climate change, deforestation, and biodiversity loss continue to threaten ecosystems
+                    and human livelihoods, yet awareness remains limited among many communities.
+                </p>
+                <p>
+                    EcoSphere was created to bridge the gap between knowledge and action—providing a space where
+                    learning leads to engagement, and engagement leads to real-world change.
+                </p>
+            </div>
+
+            <div class="mission-image">
+                <img src="https://pbs.twimg.com/media/GCWbGk-W0AAYg_B.jpg" alt="Mission Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- GOALS SECTION -->
+    <section class="section values">
+        <h1>EcoSphere's Goals</h1>
+
+        <div class="values-grid">
+
+            <div class="value-card">
+                <h3>Advance Climate Awareness (SDG 13)</h3>
+                <p>
+                    Educate users about the causes, impacts, and solutions to climate change through engaging multimedia
+                    content and actionable tips for sustainable living.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>Promote Biodiversity Preservation (SDG 15)</h3>
+                <p>
+                    Highlight the importance of protecting forests, wildlife, and natural habitats while supporting local
+                    conservation efforts and community participation.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>Encourage Environmental Action</h3>
+                <p>
+                    Inspire individuals to join environmental campaigns, adopt eco-friendly lifestyle habits, and participate in
+                    sustainability programs.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>Build a Global Eco-Community</h3>
+                <p>
+                    Connect advocates, volunteers, and organizations to collaborate, share ideas, and collectively protect the
+                    planet.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+{% endblock %}

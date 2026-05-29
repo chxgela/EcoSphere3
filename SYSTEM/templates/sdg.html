@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+{% block title %}SDG Goals | EcoSphere{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='sdg.css') }}">
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>UN Sustainable Development Goals</h1>
+            <p>
+                17 interconnected goals designed to be a blueprint for peace and prosperity
+                for people and the planet.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOCUS AREA -->
+    <section class="focus-area">
+        <h2>Our Focus Areas</h2>
+        <p>
+            EcoSphere concentrates on SDG 13 and SDG 15, working to create meaningful impact in 
+            climate action and terrestrial ecosystem protection.
+        </p>
+    </section>
+
+    <!-- SDG 13 -->
+    <section class="section climate-action">
+        
+        <figure class="section-media">
+            <img src="{{ url_for('static', filename='images/climate.jpg') }}" alt="Climate Action">
+        </figure>
+
+        <div class="section-content">
+            <div class="kicker">SDG 13</div>
+            <h3>Climate Action</h3>
+            <p class="lead">
+                Take urgent action to combat climate change and its impacts. Climate change is affecting
+                every country on every continent. It disrupts national economies and affects lives.
+            </p>
+
+            <h4>Key Targets:</h4>
+            <ul class="checklist">
+                <li>Strengthen resilience and adaptive capacity to climate-related hazards</li>
+                <li>Integrate climate change measures into national policies and planning</li>
+                <li>Improve education and awareness on climate change mitigation</li>
+                <li>Promote mechanisms for raising capacity for climate change planning</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- SDG 15 -->
+    <section class="section life-on-land">
+        
+        <figure class="section-media">
+            <img src="{{ url_for('static', filename='images/forest.jpg') }}" alt="Life on Land">
+        </figure>
+
+        <div class="section-content">
+            <div class="kicker">SDG 15</div>
+            <h3>Life on Land</h3>
+            <p class="lead">
+                Protect, restore and promote sustainable terrestrial ecosystems.
+                Forests cover 30% of the Earth and provide vital habitats for millions of species.
+            </p>
+
+            <h4>Key Targets:</h4>
+            <ul class="checklist">
+                <li>Ensure conservation and restoration of terrestrial ecosystems</li>
+                <li>Promote sustainable management of forests</li>
+                <li>Combat desertification and restore degraded land</li>
+                <li>Take urgent action to reduce degradation of natural habitats</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- SDG CARDS -->
+    <section class="sdg-grid">
+
+        <article class="sdg-card tone-red">
+            <div class="sdg-icon">🧰</div>
+            <div class="sdg-label">SDG 1</div>
+            <div class="sdg-info">
+                <h4>No Poverty</h4>
+                <p>End poverty in all its forms everywhere.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-amber">
+            <div class="sdg-icon">🍽️</div>
+            <div class="sdg-label">SDG 2</div>
+            <div class="sdg-info">
+                <h4>Zero Hunger</h4>
+                <p>End hunger, achieve food security and improved nutrition.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-green">
+            <div class="sdg-icon">💚</div>
+            <div class="sdg-label">SDG 3</div>
+            <div class="sdg-info">
+                <h4>Good Health</h4>
+                <p>Ensure healthy lives and promote well-being for all.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-red">
+            <div class="sdg-icon">📘</div>
+            <div class="sdg-label">SDG 4</div>
+            <div class="sdg-info">
+                <h4>Quality Education</h4>
+                <p>Ensure inclusive and equitable quality education.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-gray">
+            <div class="sdg-icon">⚖️</div>
+            <div class="sdg-label">SDG 5</div>
+            <div class="sdg-info">
+                <h4>Gender Equality</h4>
+                <p>Empower all women and girls.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-blue">
+            <div class="sdg-icon">💧</div>
+            <div class="sdg-label">SDG 6</div>
+            <div class="sdg-info">
+                <h4>Clean Water</h4>
+                <p>Ensure sustainable water and sanitation for all.</p>
+            </div>
+        </article>
+
+                <article class="sdg-card tone-amber">
+            <div class="sdg-icon">⚡</div>
+            <div class="sdg-label">SDG 7</div>
+            <div class="sdg-info">
+                <h4>Affordable and Clean Energy</h4>
+                <p>Ensure access to affordable, reliable, sustainable and modern energy.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-red">
+            <div class="sdg-icon">💼</div>
+            <div class="sdg-label">SDG 8</div>
+            <div class="sdg-info">
+                <h4>Decent Work and Economic Growth</h4>
+                <p>Promote sustained, inclusive and sustainable economic growth and productive employment.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-green">
+            <div class="sdg-icon">🏗️</div>
+            <div class="sdg-label">SDG 9</div>
+            <div class="sdg-info">
+                <h4>Industry, Innovation and Infrastructure</h4>
+                <p>Build resilient infrastructure and promote sustainable industrialization and innovation.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-blue">
+            <div class="sdg-icon">🏙️</div>
+            <div class="sdg-label">SDG 10</div>
+            <div class="sdg-info">
+                <h4>Reduced Inequalities</h4>
+                <p>Reduce inequality within and among countries.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-amber">
+            <div class="sdg-icon">🌳</div>
+            <div class="sdg-label">SDG 11</div>
+            <div class="sdg-info">
+                <h4>Sustainable Cities and Communities</h4>
+                <p>Make cities inclusive, safe, resilient, and sustainable.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-green">
+            <div class="sdg-icon">🌱</div>
+            <div class="sdg-label">SDG 12</div>
+            <div class="sdg-info">
+                <h4>Responsible Consumption and Production</h4>
+                <p>Ensure sustainable consumption and production patterns.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-blue">
+            <div class="sdg-icon">🌊</div>
+            <div class="sdg-label">SDG 13</div>
+            <div class="sdg-info">
+                <h4>Climate Action</h4>
+                <p>Take urgent action to combat climate change and its impacts.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-blue">
+            <div class="sdg-icon">🐠</div>
+            <div class="sdg-label">SDG 14</div>
+            <div class="sdg-info">
+                <h4>Life Below Water</h4>
+                <p>Conserve and sustainably use oceans, seas, and marine resources.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-green">
+            <div class="sdg-icon">🌿</div>
+            <div class="sdg-label">SDG 15</div>
+            <div class="sdg-info">
+                <h4>Life on Land</h4>
+                <p>Protect, restore, and promote sustainable use of terrestrial ecosystems.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-gray">
+            <div class="sdg-icon">🕊️</div>
+            <div class="sdg-label">SDG 16</div>
+            <div class="sdg-info">
+                <h4>Peace, Justice & Strong Institutions</h4>
+                <p>Promote peaceful and inclusive societies for sustainable development.</p>
+            </div>
+        </article>
+
+        <article class="sdg-card tone-amber">
+            <div class="sdg-icon">🤝</div>
+            <div class="sdg-label">SDG 17</div>
+            <div class="sdg-info">
+                <h4>Partnerships for the Goals</h4>
+                <p>Strengthen global partnerships to support and achieve the SDGs.</p>
+            </div>
+        </article>
+    </section>
+
+</body>
+
+
+{% endblock %}

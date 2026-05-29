@@ -1,0 +1,339 @@
+/* Global Reset and Base Settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #1a1a1a;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Global Buttons */
+.learn-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #6d9c3d;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.learn-btn:hover {
+  background-color: #58812f;
+  transition: background-color 0.3s ease, transform 0.6s ease;
+}
+
+/* -- LOGO AND NAMETAG -- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  cursor: pointer;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.logo img {
+  background: transparent;
+  width: auto;
+  height: auto;
+  margin-right: -15px;
+}
+
+/* -- NAVIGATION BAR -- */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.507);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar img {
+  height: 50px;
+  width: auto;
+}
+
+nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: right;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #2e5731;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background-color: #64a01b;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #6cbf3d;
+}
+
+nav a {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #a8e063;
+}
+
+/* -- ABOUT US DROPDOWN -- */
+
+.dropdown-click {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  background-color: #2e5939;
+  min-width: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.dropdown-click:hover .dropdown-content {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #3e6b48;
+}
+
+.dropbtn {
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: #d9e7d5;
+    padding: 50px 0 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 40px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-slogan {
+    font-family: 'Poppins', sans-serif;
+    color: #2e5b32;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 800;
+}
+
+.footer-logo {
+    display: flex;
+    flex: 1; 
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-logo img {
+    display: block;
+}
+
+.footer-logo img[alt="CICS Logo"] {
+    height: 110px;
+}
+
+.footer-logo img[alt="EcoSphere Logo"] {
+    height: 110px;
+}
+
+.footer-logo img[alt="BSU Logo"] {
+    height: 80px;
+}
+
+.footer-contact h3 {
+    font-size: 20px;
+    color: #2e5b32;
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    color: #456c48;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.footer-contact a {
+    color: #456c48;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #b8cdb2;
+    font-size: 14px;
+    color: #456c48;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-slogan {
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .footer-logo {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .footer-logo img {
+        height: 80px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Makes sure content is above background */
+h1,
+h2,
+p,
+button,
+li,
+header,
+section,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fonts and Positioning */
+h2 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+p {
+  font-family: "Lora", sans-serif;
+  text-align: center;
+}
+ul {
+  list-style-position: inside;
+  text-align: center;
+  padding: 0;
+  margin: 20px 0;
+}
+li {
+  font-family: "Poppins", sans-serif;
+  display: list-item;
+}
+
+body {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: subtleFade 0.30s ease-out forwards;
+}
+
+@keyframes subtleFade {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: "Poppins", system-ui;
+    background-color: #f3efe6;
+    color: #3f3a30;
+    line-height: 1.7;
+}
+
+.section {
+    padding: 60px 10%;
+}
+
+/*hero section*/
+.hero {
+    text-align: center;
+    padding: 80px 10%;
+    background: linear-gradient(
+        rgba(96, 112, 91, 0.65),
+        rgba(96, 112, 91, 0.65)
+    ),
+    url("https://images.pexels.com/photos/2310641/pexels-photo-2310641.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 20px auto 0;
+    font-size: 1.2rem;
+}
+
+/* vision & mission */
+.vm-section {
+    background-color: #e7e1d4; 
+}
+
+.vm-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    padding-top: 20px;
+}
+
+.vm-card {
+    background: #ffffff;
+    padding: 30px;
+    flex: 1;                
+    min-width: 360px;
+    max-width: 600px;
+    border-radius: 14px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* purpose */
+.section.mission {
+    padding: 50px 10%;    
+}
+
+.section.mission h2 {
+    margin-top: 0;
+    margin-bottom: 20px;   
+    text-align: left;
+}
+
+.mission-content {
+    margin-top: 10px;       
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.mission-text {
+    flex: 1;
+    min-width: 320px;
+}
+
+.mission-image img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    border: 4px solid #c9b89a;
+}
+
+
+
+/* goals */
+.values {
+    background-color: #ece7dc;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.value-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    justify-content: center;
+    text-align: center;
+
+    
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.value-card h3 {
+    margin-top: 0;
+    color: #53664d; 
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    .vm-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .mission-content {
+        flex-direction: column;
+    }
+}
+
+body {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: subtleFade 0.30s ease-out forwards;
+}
+
+@keyframes subtleFade {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

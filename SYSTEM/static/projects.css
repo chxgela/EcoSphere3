@@ -1,0 +1,272 @@
+/* Base */
+:root {
+  --bg: #f3efe6;
+  --card: #b5bd94;
+  --muted: #ffffff;
+  --text: #ffffff;
+  --accent: #77806cbb;
+  --accent-dark: #999676;
+  --gap: 28px;
+
+  /* FIXED HEIGHT */
+  --card-height: 720px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui;
+  background: var(--bg);
+  color: var(--text);
+
+  opacity: 0;
+  transform: translateY(5px);
+  animation: subtleFade 0.3s ease-out forwards;
+}
+
+/* Header */
+header {
+  padding: 120px 30px;
+  background: linear-gradient(
+      rgba(41, 43, 40, 0.314),
+      rgba(95, 129, 86, 0.575)
+    ),
+    url("/static/images/projects.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+header p {
+  max-width: 700px;
+  margin: 20px auto 0;
+  font-size: 1.2rem;
+}
+
+/* Grid */
+main {
+  max-width: 1280px;
+  margin: 34px auto;
+  padding: 0 18px 60px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.2);
+
+  display: flex;
+  flex-direction: column;
+
+  height: var(--card-height);
+
+  transition: 0.28s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.28);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Content */
+.card-content {
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  min-height: 0;
+}
+
+/* SDG */
+.sdg-tag {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  background: var(--accent);
+  color: #fff;
+  width: fit-content;
+}
+
+/* Title */
+.card h3 {
+  margin: 12px 0 10px;
+  font-size: 1.05rem;
+  color: #fff;
+  min-height: 52px;
+}
+
+/* Description */
+.lead {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.5;
+
+  min-height: 88px;
+}
+
+/* Info Scroll Area */
+.info {
+  margin-top: 12px;
+
+  font-size: 0.88rem;
+  color: #354024;
+  line-height: 1.45;
+
+  overflow-y: auto;
+
+  flex: 1;
+  min-height: 0;
+
+  padding-right: 6px;
+}
+
+/* Scrollbar */
+.info::-webkit-scrollbar {
+  width: 7px;
+}
+
+.info::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.info::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+}
+
+.info::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Firefox */
+.info {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25)
+    rgba(255, 255, 255, 0.08);
+}
+
+/* Inner rows */
+.info div {
+  margin: 6px 0;
+}
+
+/* Info Blocks */
+.info-block {
+  margin: 12px 0;
+}
+
+.info-block strong {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #354024;
+  font-size: 0.9rem;
+}
+
+.info-block ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.info-block ul li {
+  margin-bottom: 5px;
+
+  color: #354024;
+  font-size: 0.87rem;
+  line-height: 1.4;
+}
+
+/* Button */
+.learn-btn {
+  margin-top: 16px;
+
+  background: var(--accent);
+  color: #fff;
+
+  text-decoration: none;
+
+  padding: 12px;
+  border-radius: 10px;
+
+  font-weight: 600;
+  text-align: center;
+
+  transition: 0.2s ease;
+
+  width: 100%;
+
+  flex-shrink: 0;
+}
+
+.learn-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* Animation */
+@keyframes subtleFade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --card-height: auto;
+  }
+
+  .card h3,
+  .lead {
+    min-height: unset;
+  }
+
+  .info {
+    max-height: none;
+  }
+}
