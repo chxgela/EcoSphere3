@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lora:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_responsive.css') }}">
 </head>
 <body class="dashboard-body">
 
@@ -484,6 +486,20 @@
         }
 
         function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            if (window.innerWidth <= 900) {
+                sidebar.classList.toggle('open');
+                let overlay = document.getElementById('sidebarOverlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.id = 'sidebarOverlay';
+                    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1040;';
+                    overlay.onclick = () => { sidebar.classList.remove('open'); overlay.remove(); };
+                    document.body.appendChild(overlay);
+                } else { overlay.remove(); }
+                return;
+            }
+            // desktop
             document.getElementById('sidebar').classList.toggle('collapsed');
         }
 

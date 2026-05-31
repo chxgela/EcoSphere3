@@ -1,0 +1,272 @@
+/* ============================================================
+   EcoSphere — admin_responsive.css
+   Responsive overrides specifically for the admin dashboard.
+   Add this after admin.css in admin_dashboard.html.
+   ============================================================ */
+
+/* Ensure dashboard body uses flex row on desktop */
+@media (min-width: 901px) {
+  .dashboard-body {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 240px;
+    flex-shrink: 0;
+  }
+
+  .main-content {
+    margin-left: 240px;
+    flex: 1;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .sidebar.collapsed {
+    width: 60px;
+  }
+
+  .sidebar.collapsed .sidebar-nav a span,
+  .sidebar.collapsed .sidebar-logo span,
+  .sidebar.collapsed .admin-info span,
+  .sidebar.collapsed .logout-btn span {
+    display: none;
+  }
+
+  .sidebar.collapsed + .main-content {
+    margin-left: 60px;
+  }
+}
+
+/* Mobile sidebar */
+@media (max-width: 900px) {
+  .dashboard-body {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 1050;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding-top: 0;
+    width: 100%;
+  }
+
+  .topbar {
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  /* Stats cards 2-col on tablet, 1-col on phone */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .stat-card {
+    padding: 0.9rem;
+  }
+
+  .stat-value {
+    font-size: 1.25rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.75rem !important;
+  }
+
+  /* Tabs content padding */
+  .tab-content {
+    padding: 0.75rem;
+  }
+
+  /* Section cards */
+  .section-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+
+  /* Table horizontal scroll */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+  }
+
+  .data-table {
+    min-width: 650px;
+    font-size: 0.8rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.5rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  /* Action buttons */
+  .action-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .approve-btn,
+  .reject-btn,
+  .delete-btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+    white-space: nowrap;
+  }
+
+  /* Payment breakdown */
+  .payment-breakdown {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .payment-method-card {
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+  }
+
+  /* Progress bar */
+  .goal-labels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    gap: 0.3rem;
+  }
+
+  /* Pending alert */
+  .pending-alert {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  /* Flash messages */
+  .flash-container {
+    padding: 0 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .alert {
+    padding: 0.7rem 1rem;
+    font-size: 0.87rem;
+    border-radius: 8px;
+  }
+
+  /* Search */
+  .search-wrap {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .search-wrap input {
+    width: 100%;
+    font-size: 0.87rem;
+  }
+
+  .section-card-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Donor avatar */
+  .donor-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  /* Badge */
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  /* Topbar right */
+  .topbar-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .topbar-date {
+    font-size: 0.78rem;
+  }
+
+  .view-site-btn {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .topbar-date {
+    display: none;
+  }
+
+  .topbar-title h2 {
+    font-size: 1rem;
+  }
+
+  .topbar-title span {
+    font-size: 0.72rem;
+  }
+
+  .data-table {
+    min-width: 580px;
+    font-size: 0.75rem;
+  }
+}
